@@ -3,7 +3,7 @@ import User from "./User";
 const requireAllServices = (ctx: any): React.FC<any>[] => {
   const keys = ctx.keys();
   const modules = keys.map(ctx);
-
+  console.log("Keys in services: " + JSON.stringify(keys));
   return keys.map((key: string, index: number) => modules[index].StoreProvider);
 };
 
