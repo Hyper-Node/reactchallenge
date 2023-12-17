@@ -45,15 +45,16 @@ export default class UserStore {
 
     if (result) {
       runInAction(() => {
-        this.urser = result;
+        this.user = result;
       });
 
+      console.log("USERSUCESS");
       return {
         status: ActionResultStatus.SUCCESS,
         result: result
       } as ActionSuccess<User>;
     }
-
+    console.log("USERERROR");
     return {
       status: ActionResultStatus.ERROR,
       error: "Something went wrong."
